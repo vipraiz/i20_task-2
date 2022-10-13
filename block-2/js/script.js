@@ -73,9 +73,8 @@ function num_word(value, words) {
 }
 
 function getMessage(value) {
-  let lastDigit = value % 10;
   return (
-    `В корзину ${lastDigit == 1 ? 'добавлен' : 'добавлено'} ` +
+    `В корзину ${value % 10 == 1 && value % 100 != 11 ? 'добавлен' : 'добавлено'} ` +
     value +
     ' ' +
     num_word(value, ['товар', 'товара', 'товаров'])
